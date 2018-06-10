@@ -1,16 +1,65 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Formas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Ìcono de la página. -->
+    <link rel="icon" sizes="16x16" href="img/form_16px.png" >
+
+    <!-- Configuración del acceso directo en Chrome. -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Configuración del acceso directo en Safari. -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Compro">
+    <link rel="apple-touch-icon" sizes="128x128" href="img/form_128px.png">
+    <link rel="apple-touch-icon-precomposed" sizes="128x128"
+          href="img/form_128px.png">
+
+    <!-- Configuración del acceso directo en Windows. -->
+    <meta name="msapplication-TileImage" content="img/form_128px.png">
+
+    <script src="js/libs/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="js/libs/require.js/require.min.js"></script>
+    <script src="js/libs/Util.js"></script>
+    <link rel="import" href="cmp/formas-navegacion.html">
+    <link rel="import" href="cmp/formas-footer.html">
+    <link rel="stylesheet" href="css/estilos.css">
+    <style>
+    </style>
+  </head>
+  <body>
+    <div>
+      <formas-navegacion></formas-navegacion>
+      <main role="main"></main>
+    </div>
+  <formas-footer></formas-footer>
+  <script>
+    "use strict";
+    document.addEventListener("WebComponentsReady", () => {
+      const main = document.querySelector("main");
+      window.addEventListener("hashchange", cambioDeHash);
+      cambioDeHash();
+      function cambioDeHash() {
+        main.innerHTML = "";
+        const hash = location.hash;
+        switch (hash) {
+          case "":
+          case "#":
+          default :
+            main.appendChild(document.createElement("formas-selecciona-cigarro"));
+            break;
+
+          case "#formas-selecciona-cigarro":
+
+            main.appendChild(document.createElement(hash.substring(1)));
+        }
+      }
+    });
+  </script>
+</body>
 </html>

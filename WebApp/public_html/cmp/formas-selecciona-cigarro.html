@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Selecciona Cigarro</title>
+  </head>
+  <body>
+    <template>
+      <form name="forma" action="javascript:;">
+        <h1>Comprar Cigarro</h1>
+        <fieldset>
+          <legend>¿Qúe cigarro deseas comprar?</legend>
+          <label accesskey="S">
+            <input id="cigarro1" name="cigarro" type="checkbox" value="Cigarro 1">
+            Cigarro 1 &nbsp; &nbsp; $200.00
+          </label>
+          <label accesskey="M">
+            <input id="cigarro2" name="cigarro" type="checkbox" value="Cigarro 2">
+            Cigarro 2 &nbsp; &nbsp; $349.00
+          </label>
+          <label accesskey="D">
+            <input id="cigarro3" name="cigarro" type="checkbox" value="Cigarro 3"
+                   checked>
+            Cigarro 3 &nbsp; &nbsp; $700.00
+          </label>
+          <label accesskey="R">
+            <input id="cigarro4" name="cigarro" type="checkbox" value="Cigarro 4">
+            Cigarro 4 &nbsp; &nbsp; $230.00
+          </label>
+        </fieldset>
+        <p><output name="salidaCigarros"></output></p>
+      </form>
+    </template>
+    <script>
+      "use strict";
+      (() => {
+        const template = Util.elementPrevio();
+        Util.registraElement("formas-selecciona-cigarro",
+            class extends HTMLElement {
+          connectedCallback() {
+            Util.agregaTemplate(this, template);
+            document.forma
+                .addEventListener("click", () => this.validaCigarro())
+            this.validaCelebridades();
+          }
+          validaCigarro() {
+            var seleccion = Array.prototype.map.call(
+                this.querySelectorAll("[name='cigarro']:checked"),
+                checkbox => checkbox.value);
+            document.forma.salidaCigarros.value = seleccion.join(", ")
+                + ". "
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
