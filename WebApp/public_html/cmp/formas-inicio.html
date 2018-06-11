@@ -9,6 +9,11 @@ and open the template in the editor.
         <title>Inicio de Secion</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estilos.css">
+        <script src="js/libs/codificaHtml.js"></script>
+        <script src="js/libs/evento.js"></script>
+        <script src="js/libs/ctrlError.js"></script>
+        <script src="js/eventosPersona.js"></script>
     </head>
     <body>
         <template>
@@ -32,8 +37,7 @@ and open the template in the editor.
         "use strict";
       (() => {
         const template = Util.elementPrevio();
-        Util.registraElement("formas-inicio\n\
-", class extends HTMLElement {
+        Util.registraElement("formas-inicio", class extends HTMLElement {
           connectedCallback() {
             Util.agregaTemplate(this, template);
           }

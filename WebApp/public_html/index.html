@@ -4,32 +4,26 @@
     <meta charset="UTF-8">
     <title>Formas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Ìcono de la página. -->
-    <link rel="icon" sizes="16x16" href="img/form_16px.png" >
-
-    <!-- Configuración del acceso directo en Chrome. -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <link rel="manifest" href="manifest.json">
-
-    <!-- Configuración del acceso directo en Safari. -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Compro">
-    <link rel="apple-touch-icon" sizes="128x128" href="img/form_128px.png">
-    <link rel="apple-touch-icon-precomposed" sizes="128x128"
-          href="img/form_128px.png">
-
-    <!-- Configuración del acceso directo en Windows. -->
-    <meta name="msapplication-TileImage" content="img/form_128px.png">
-
     <script src="js/libs/webcomponentsjs/webcomponents-loader.js"></script>
     <script src="js/libs/require.js/require.min.js"></script>
     <script src="js/libs/Util.js"></script>
+    <script src="js/libs/codificaHtml.js"></script>
+    <script src="js/libs/evento.js"></script>
+    <script src="js/libs/ctrlError.js"></script>
+    <script src="js/eventosPersona.js"></script>
+    
     <link rel="import" href="cmp/formas-navegacion.html">
     <link rel="import" href="cmp/formas-footer.html">
     <link rel="stylesheet" href="css/estilos.css">
     <style>
+            html{font-family: sans-serif; text-align: center}
+            body{display: inline-block; text-align: center; background: powderblue
+            }
+            label{font-weight: bold}
+            *:required, .obligatorio{border: black}
+            input[type=number] {text-align: right}
+            output{font-weight: bold}
+            footer, form em {font-size: small}
     </style>
   </head>
   <body>
