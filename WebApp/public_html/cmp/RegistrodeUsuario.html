@@ -7,10 +7,11 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
+        <title>Registrar Usuario</title>
     </head>
     <body>
         <template>
-            <form name="registro">
+            <form name="forma" action="javascript:;">
                 <p>
                     <label accesskey="A">
                         Nombres:
@@ -35,7 +36,19 @@ and open the template in the editor.
                         <input name="contraseña" required>
                     </label>                     
                 </p>
+                <p><input type="submit" value="Registrarse" accesskey="R"></p>
             </form>
         </template>
+        <script>
+        "use strict";
+      (() => {
+        const template = Util.elementPrevio();
+        Util.registraElement("RegistrodeUsuario", class extends HTMLElement {
+          connectedCallback() {
+            Util.agregaTemplate(this, template);
+          }
+        });
+      })();    
+        </script>
     </body>
 </html>
