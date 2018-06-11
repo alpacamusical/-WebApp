@@ -31,7 +31,8 @@ and open the template in the editor.
         "use strict";
       (() => {
         const template = Util.elementPrevio();
-        Util.registraElement("formas-inicio", class extends HTMLElement {
+        Util.registraElement("formas-inicio\n\
+", class extends HTMLElement {
           connectedCallback() {
             Util.agregaTemplate(this, template);
           }
