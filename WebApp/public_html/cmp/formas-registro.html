@@ -15,34 +15,41 @@ and open the template in the editor.
     </head>
     <body>
         <template>
-            <!-- <form name="forma" action="javascript:;"> -->
+            <form name="forma" action="javascript:;">
                 <h1>Registro</h1>
                 
                 <fieldset>
                     <legend>Ingrese sus datos:</legend>
                     <label accesskey="A">
-                        Nombre:
-                        <input name="nombre" type="text" size="33" maxlength="30" required>
+                        Nombres:
+                        <input id="nombre_registro" type="text" size="33" maxlength="30" required>
                     </label>                    
                 <label accesskey="B">
                         Apellidos:
-                        <input name="apellidos" type="text" size="33" maxlength="30" required>
+                        <input id="apellido_registro" type="text" size="33" maxlength="30" required>
                 </label>                     
                 <label accesskey="C">
                         Correo Electronico:
-                        <input name="correo" type="text" size="33" maxlength="30" required>
+                        <input id="correo_registro" type="text" size="33" maxlength="30" required>
                 </label>                     
                 <label accesskey="D">
                         Contraseña:
-                        <input name="contraseña" type="password" required>
+                        <input id="contraseña_registro" required>
                     </label>   
                 </fieldset>
-                <p><input id="guarda" type="submit" value="Guardar" accesskey="R"></p>
-            <!--</form>-->
+                <p><input type="submit" value="Ok" accesskey="R"></p>
+            </form>
         </template>
         <script>
         "use strict";
-        Util.registraElementSimple("formas-registro");
+      (() => {
+        const template = Util.elementPrevio();
+        Util.registraElement("formas-registro", class extends HTMLElement {
+          connectedCallback() {
+            Util.agregaTemplate(this, template);
+          }
+        });
+      })();    
         </script>
     </body>
 </html>
