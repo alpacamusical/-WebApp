@@ -23,24 +23,32 @@ and open the template in the editor.
                 
                 <fieldset>
                     <legend>Ingrese sus datos:</legend>
+                    <div class="form-group">
                     <label accesskey="A">
                         Nombres:
-                        <input id="nombre_registro" type="text" size="33" maxlength="30" required>
-                    </label>                    
+                        <input class="form-control" id="nombre_registro" type="text" size="33" maxlength="30" required>
+                    </label>     
+                    </div>
+                    <div class="form-group">
                 <label accesskey="B">
                         Apellidos:
-                        <input id="apellido_registro" type="text" size="33" maxlength="30" required>
-                </label>                     
+                        <input class="form-control" id="apellido_registro" type="text" size="33" maxlength="30" required>
+                </label>  
+                    </div>
+                    <div class="form-group">
                 <label accesskey="C">
                         Correo Electronico:
-                        <input id="correo_registro" type="text" size="33" maxlength="30" required>
-                </label>                     
+                        <input class="form-control" id="correo_registro" type="text" size="33" maxlength="30" required>
+                </label>    
+                    </div>
+                    <div class="form-group">
                 <label accesskey="D">
                         Contraseña:
-                        <input id="contraseña_registro" required>
-                    </label>   
+                        <input class="form-control" id="contraseña_registro" required>
+                    </label> 
+                    </div>
                 </fieldset>
-                <p><input type="submit" value="Ok" accesskey="R"></p>
+                  <button class="btn btn-primary">OK</button>
             </form>
           </div>
         </template>
