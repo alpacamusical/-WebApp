@@ -3,33 +3,45 @@
   <head>
     <meta charset="UTF-8">
     <title>Selecciona Cigarro</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
   </head>
   <body>
     <template>
+      
       <form name="forma" action="javascript:;">
         <h1>Comprar Cigarro</h1>
         <fieldset>
           <legend>¿Qúe cigarro deseas comprar?</legend>
+          <div class="form-group">
           <label accesskey="S">
-            <input id="cigarro1" name="cigarro" type="checkbox" value="Cigarro 1">
+            <input class="form-control" id="cigarro1" name="cigarro" type="checkbox" value="Cigarro 1">
             Cigarro 1 &nbsp; &nbsp; $200.00
           </label>
+          </div>
+           <div class="form-group">
           <label accesskey="M">
-            <input id="cigarro2" name="cigarro" type="checkbox" value="Cigarro 2">
+              <input class="form-control" id="cigarro2" name="cigarro" type="checkbox" value="Cigarro 2">
             Cigarro 2 &nbsp; &nbsp; $349.00
           </label>
+           </div>
+           <div class="form-group">
           <label accesskey="D">
-            <input id="cigarro3" name="cigarro" type="checkbox" value="Cigarro 3"
+              <input class="form-control" id="cigarro3" name="cigarro" type="checkbox" value="Cigarro 3"
                    checked>
             Cigarro 3 &nbsp; &nbsp; $700.00
           </label>
+           </div>
+           <div class="form-group">
           <label accesskey="R">
-            <input id="cigarro4" name="cigarro" type="checkbox" value="Cigarro 4">
+            <input class="form-control" id="cigarro4" name="cigarro" type="checkbox" value="Cigarro 4">
             Cigarro 4 &nbsp; &nbsp; $230.00
           </label>
+            </div>
         </fieldset>
         <p><output name="salidaCigarros"></output></p>
       </form>
+    
     </template>
     <script>
       "use strict";
@@ -53,5 +65,7 @@
         });
       })();
     </script>
+    <script src="js/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </body>
 </html>
