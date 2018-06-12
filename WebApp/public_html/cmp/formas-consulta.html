@@ -9,6 +9,8 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
     </head>
     <body>
         <template>
@@ -16,12 +18,13 @@ and open the template in the editor.
             <h1>Buscar</h1>
             <fieldset>
                 <legend>Ingrese el correo a buscar:</legend>
+                
                 <label accesskey="C">
                         Correo Electronico:
-                        <input id="correo_registro" type="text" size="33" maxlength="30" required>
+                        <input class="form-control" id="correo_registro" type="text" size="33" maxlength="30" required>
                 </label>        
-                <p><input type="button" value="Actualizar" accesskey="A">
-                <input type="button" value="Eliminar" accesskey="E"></p>
+                 <button class="btn btn-primary">Actualizar</button>
+                 <button class="btn btn-primary">Eliminar</button>
             </fieldset>
         </form>
         </template>
