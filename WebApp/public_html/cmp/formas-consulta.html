@@ -11,6 +11,30 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>
+        <template>
+        <form name="forma" action="javascript:;">
+            <h1>Buscar</h1>
+            <fieldset>
+                <legend>Ingrese el correo a buscar:</legend>
+                <label accesskey="C">
+                        Correo Electronico:
+                        <input id="correo_registro" type="text" size="33" maxlength="30" required>
+                </label>        
+                <p><input type="button" value="Actualizar" accesskey="A">
+                <input type="button" value="Eliminar" accesskey="E"></p>
+            </fieldset>
+        </form>
+        </template>
+        <script>
+        "use strict";
+      (() => {
+        const template = Util.elementPrevio();
+        Util.registraElement("formas-consulta", class extends HTMLElement {
+          connectedCallback() {
+            Util.agregaTemplate(this, template);
+          }
+        });
+      })();    
+        </script>
     </body>
 </html>
