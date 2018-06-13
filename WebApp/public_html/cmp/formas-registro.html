@@ -38,17 +38,18 @@ and open the template in the editor.
                     <div class="form-group">
                 <label accesskey="C">
                         Correo Electronico:
-                        <input class="form-control" id="correo_registro" type="text" size="33" maxlength="30" required>
+                        <input class="form-control" id="correo_registro" type="email" required>
                 </label>    
                     </div>
                     <div class="form-group">
                 <label accesskey="D">
                         Contraseña:
-                        <input class="form-control" id="contraseña_registro" required>
+                        <input class="form-control" id="password_registro" type="password" required>
                     </label> 
                     </div>
                 </fieldset>
-                  <button class="btn btn-primary">OK</button>
+                  <input type="button" class="btn btn-primary" value="Ok" onclick="add()">
+                  <div id="result"></div>
             </form>
           </div>
         </template>
@@ -62,6 +63,20 @@ and open the template in the editor.
           }
         });
       })();    
+        </script>
+        <script type="text/javascript">
+            var db = openDatabase('mydb', '1.0', 'My DB', 5*1024*1024);
+            
+            function add() {
+                db.transaction(function (tx){
+                   var nombre = document.getElementById('nombre_registro').value; 
+                   var apellidos = document.getElementById('apellido_registro').value;
+                   var correo = document.getElementById('correo_registro').value;
+                   var password = document.getElementById('password_registro').value;
+                   tx.executeSql('insert into usuario(nombre, apellidos, correo, password) values(?,?,?,?)', [nombre, apellidos, correo, password]);
+                });
+            }
+            
         </script>
         <script src="js/jquery.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

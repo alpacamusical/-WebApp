@@ -39,6 +39,7 @@
           </label>
             </div>
         </fieldset>
+        <input type="button" class="btn btn-primary" value="Ok" onclick="alerta()">
         <p><output name="salidaCigarros"></output></p>
       </form>
     
@@ -52,8 +53,7 @@
           connectedCallback() {
             Util.agregaTemplate(this, template);
             document.forma
-                .addEventListener("click", () => this.validaCigarro())
-            this.validaCelebridades();
+                .addEventListener("click", () => this.validaCigarro());
           }
           validaCigarro() {
             var seleccion = Array.prototype.map.call(

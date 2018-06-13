@@ -24,7 +24,9 @@ and open the template in the editor.
                         <input class="form-control" id="correo_registro" type="text" size="33" maxlength="30" required>
                 </label>        
                  <button class="btn btn-primary">Actualizar</button>
-                 <button class="btn btn-primary">Eliminar</button>
+                 <input type="button" class="btn btn-primary" value="Buscar" onclick="display()">
+                 <input type="button" class="btn btn-primary" value="Eliminar" onclick="del()">
+                 <div id="result"></div>
             </fieldset>
         </form>
         </template>
@@ -38,6 +40,34 @@ and open the template in the editor.
           }
         });
       })();    
+        </script>
+        <script type="text/javascript">
+            var db = openDatabase('mydb', '1.0', 'My DB', 5*1024*1024);
+            
+            function display(){
+                db.transaction(function (tx){
+                   tx.executeSql('select correo from usuario', [], function(tx, results){
+                      var s = null;
+                      var n = results.rows.length;
+                      var correoBD = null;
+                      var i=0;
+                     for(i=0; i<n; i++){
+                          var correoBD = results.rows.item(i);
+                          var correo = document.getElementById('correo_registro').value;
+                          if(correo === correoBD){
+                              s+='<br>' + correoBD.nombre + '<br>';
+                              s+='<br>' + correoBD.apellidos + '<br>';
+                              s+='<br>' + correoBD.correo + '<br>';
+                              document.getElementById('result').innerHTML= s;
+                              i = n;
+                          }
+                      }
+                   }); 
+                });
+            }
+            function del(){
+                
+            }
         </script>
     </body>
 </html>
