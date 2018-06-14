@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+         <link rel="stylesheet" href="css/estilos.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+    </head>
+    <body>
+        <template>
+             <H1>cigarros electronicos</H1>
+             <div class="container-fluid">
+                 <div class="container">
+                     <img src="img/cigarro.jpg" class="img-responsive">
+                 </div>
+             </div>
+        
+        
+        </template>    
+        <script>
+        "use strict";
+      (() => {
+        const template = Util.elementPrevio();
+        Util.registraElement("formas-bienvenida", class extends HTMLElement {
+          connectedCallback() {
+            Util.agregaTemplate(this, template);
+          }
+        });
+      })();    
+        </script>
+        <script src="js/jquery.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>
